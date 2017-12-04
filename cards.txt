@@ -1,0 +1,336 @@
+Volcano
+Volcano
+0
+0
+0
+A volcano that can be erupted to deal massive damage
+Terrain
+Every turn units take 50 damage for moving onto this square.
+0
+10
+Rare
+0
+Helicopter
+Helicopter
+10
+3
+50
+Air Transport Unit
+Air
+Can fly over Mountains, Volcanos and aquatic spaces.
+10
+10
+Common
+2
+Dragon
+Dragon
+200
+3
+25
+This is called a dragon because we felt bad about naming a unit bomb. Also everyone else working on this game wanted it to be called Noobs, big daddies, and dragons so we needed a dragon.
+Air
+0
+100
+100
+Legendary
+1
+BigDaddy
+BigDaddy
+25
+1
+75
+A very large father
+Aquatic
+Can move on both water and land tiles. Moves for free on aquatic tiles.
+15
+25
+Epic
+1
+DefaultTerrain
+Default Terrain
+0
+0
+0
+Default Terrain
+Default Terrain
+Default Terrain
+0
+0
+Default
+0
+Noob
+Noob
+25
+1
+50
+A really bad and generic unit.
+Land
+0
+10
+1
+Common
+1
+Tank
+LandTank
+75
+2
+200
+A large vehicle that shoots things
+Land
+0
+10
+10
+Rare
+2
+PitfallLand
+Landpitfall
+15
+0
+0
+A trap that causes land unit to fall and take minor damage
+Land Trap
+Enemy land units take 25 damage when moving onto this square and loose the rest of their movement.
+10
+10
+Common
+0
+Avalanche
+Avalanche
+100
+0
+0
+A trap the deals medium damage to units when sprung.
+Mountain Trap
+Deals 100 damage to enemy units when they end their turn on the square this is placed.
+10
+10
+Epic
+1
+Forest
+Forest
+0
+0
+0
+A lot of trees near each other.
+Terrain
+Troops can hide in this forest to not be visible to enemy players.
+0
+10
+Ultra
+0
+Town
+Town
+0
+0
+0
+A town where you can spawn and heal units.
+Town
+If a unit is here at the end of your turn, it regains half of its max health if it is missing health.
+0
+10
+Town
+0
+Capital
+Capital
+0
+0
+0
+Your countrys headquarters.
+Terrain
+If an enemy unit occupies this space they take over your country and you are out of the game.
+0
+10
+Default
+0
+Swamp
+Swamp
+0
+0
+0
+A terrain that slows down land units and deals minor damage to them.
+Terrain
+Costs 2 movement for land units to move through this tile. Units take 25 damage if they move onto this tile.
+0
+10
+Rare
+0
+Mountains
+Mountains
+0
+0
+0
+A mountain terrain that slows land units.
+Terrain
+This terrain cost a land units entire movement allowance to move onto this square. 
+0
+10
+Common
+0
+Desert
+Desert
+0
+0
+0
+A vast amount of sand.
+Terrain
+Aquatic troops use two movement to move onto this tile.
+0
+10
+Common
+0
+Roads
+Roads
+0
+0
+0
+A path made of asphalt.
+Terrain
+Land units do not loose movement when they move onto this tile.
+0
+10
+Common
+0
+River
+River
+0
+0
+0
+My river runneth over - Jesus probably
+Terrain
+Aquatic units do not use movement when moving onto this tile.
+0
+10
+Common
+0
+Lake
+Lake
+0
+0
+0
+A giant body of water. Much better than a pond.
+Terrain
+Aquatic units do not use movement when moving onto this tile. Land units cannot move onto this tile.
+0
+10
+Common
+0
+Arctic
+Arctic
+0
+0
+0
+Happy feet filmed here
+Terrain
+Costs 2 movement for all unit types to move onto this tile and take 25 damage as well.
+0
+10
+Rare
+0
+Farms
+Farm
+0
+0
+0
+We are gonna pillage this place.
+Terrain
+When every a unit ends on this tile, they gain back half of their max health.
+10
+0
+Rare
+0
+Flood
+Flood
+100
+0
+0
+And we must take the current when it serves, or lose our ventures. - William Shakespeare
+Aquatic Trap
+Deals 100 damage to all nearby units.
+10
+0
+Rare
+0
+Ship
+Ship
+75
+1
+200
+I dont need none of ya ship.
+Aquatic
+Doesnt consume movement in water terrain
+10
+0
+Epic
+2
+Mine
+Mine
+1000
+0
+0
+Mine if I roll need? - every wow playing landmine
+Land Trap
+Deals 1000 damage to any unit the triggers it
+10
+0
+Legendary
+0
+Locusts
+Locust
+50
+0
+0
+Ima bring a plague down on your sorry ass - A much cooler Moses
+Land Trap
+Can only be placed on a farm. Ends a units turn and deals 50 damage to it.
+10
+0
+Epic
+20
+Eruption
+Eruption
+1000
+0
+0
+Youre dead the end
+Mountain Trap
+Kills every unit except for dragons
+10
+0
+Epic
+0
+WildFire
+WildFire
+50
+0
+0
+A California wildfire. Watch out kids!
+Land Trap
+Units take damage each turn they are on the tile
+10
+0
+Common
+0
+Plague
+Plague
+150
+0
+0
+Get ready for the rapture
+Land Trap
+Can only be placed on a town. Deals 150 damage.
+10
+0
+Epic
+0
+InvalidTerrain
+InvalidTerrain
+0
+0
+0
+ERROR
+Invalid Terrain
+INVALID TERRAIN
+0
+0
+Invalid
+0

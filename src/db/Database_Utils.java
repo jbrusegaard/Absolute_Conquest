@@ -18,7 +18,6 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.commons.lang3.StringUtils;
 
 import player.Card;
 import player.Deck;
@@ -330,7 +329,7 @@ public class Database_Utils {
 	 * @return currency that the player has
 	 */
 	public String getPlayerCurrency(String playerID) {
-		if (!StringUtils.isAlphanumeric(playerID))
+		if (!isAlphanumeric(playerID))
 			return "ERROR INVALID ID: " + playerID;
 		String query = "SELECT currency FROM LOGIN WHERE id = '" + playerID + "'";
 		ResultSet resultSet = executeNonCreationQuery(query);
@@ -352,7 +351,7 @@ public class Database_Utils {
 	 * @return success or fail message
 	 */
 	public String updatePlayerCurrency(String playerID, String currency) {
-		if (!StringUtils.isAlphanumeric(playerID))
+		if (!isAlphanumeric(playerID))
 			return "ERROR INVALID ID: " + playerID;
 		String query = "UPDATE LOGIN SET currency = " + Integer.parseInt(currency) + " ,modified = '" + getSQLDate()
 				+ "' WHERE id = '" + playerID + "'";
@@ -415,7 +414,7 @@ public class Database_Utils {
 	 * @return the count of players cards
 	 */
 	public String getCountOfPlayersCards(String userID) {
-		if (!StringUtils.isAlphanumeric(userID))
+		if (!isAlphanumeric(userID))
 			return "ERROR INVALID ID: " + userID;
 		ArrayList<String> cardNames = getAllCardNames();
 		int count = 0;
@@ -442,7 +441,7 @@ public class Database_Utils {
 	 * @return the count of players deck cards
 	 */
 	public String getCountOfPlayersDeckCards(String deckID) {
-		if (!StringUtils.isAlphanumeric(deckID))
+		if (!isAlphanumeric(deckID))
 			return "ERROR INVALID ID: " + deckID;
 		ArrayList<String> cardNames = getAllCardNames();
 		int count = 0;
@@ -483,7 +482,7 @@ public class Database_Utils {
 //	}
 
 	public String storePlayerAvatar(byte[] file, String userID) {
-		if (!StringUtils.isAlphanumeric(userID))return "ERROR INVALID ID: " + userID;
+		if (!isAlphanumeric(userID))return "ERROR INVALID ID: " + userID;
 		reconnectDatabase();
 		try {
 			String query = "UPDATE LOGIN SET avatar = ? WHERE id = '" + userID + "'";
@@ -695,7 +694,7 @@ public class Database_Utils {
 	 * @return the players deck names
 	 */
 	public ArrayList<String> getPlayersDeckNames(String userID){
-		if (!StringUtils.isAlphanumeric(userID)) return null;
+		if (!isAlphanumeric(userID)) return null;
 		ArrayList<String> deckNames = new ArrayList<>();
 		String query = "SELECT deckname FROM DECK WHERE playerid = '" + userID + "'";
 		ResultSet rSet = executeNonCreationQuery(query);
@@ -754,7 +753,7 @@ public class Database_Utils {
 	 */
 	//TODO
 	private String initNewDeckForUser(String userID) {
-		if (!StringUtils.isAlphanumeric(userID))
+		if (!isAlphanumeric(userID))
 			return "ERROR INVALID ID: " + userID;
 		String id = generateDeckID(16);
 		int totalCardCount = 0;
@@ -884,7 +883,7 @@ public class Database_Utils {
 	 * @return the avatar
 	 */
 	public byte[] getAvatar(String userID) {
-		if (!StringUtils.isAlphanumeric(userID))return null;
+		if (!isAlphanumeric(userID))return null;
 		String query = "SELECT avatar FROM LOGIN WHERE id = '" + userID + "'";
 		ResultSet rSet = executeNonCreationQuery(query);
 		
@@ -909,7 +908,7 @@ public class Database_Utils {
 	 */
 	public ArrayList<String> getCardNumbersForUser(String userID) {
 		ArrayList<String> values = new ArrayList<String>();
-		if (!StringUtils.isAlphanumeric(userID)) {
+		if (!isAlphanumeric(userID)) {
 			values.add("INVALID ID");
 			return values;
 		}
@@ -937,8 +936,8 @@ public class Database_Utils {
 	 * @return the string
 	 */
 	public String addCardToDeck(String deckID,String name) {
-		if (!StringUtils.isAlphanumeric(deckID)) return "INVALID DECKID";
-		if (!StringUtils.isAlphanumeric(name)) return "INVALID CARDNAME";
+		if (!isAlphanumeric(deckID)) return "INVALID DECKID";
+		if (!isAlphanumeric(name)) return "INVALID CARDNAME";
 		String countOfCard = "SELECT " + name + " FROM DECK WHERE deckid = '" + deckID + "'";
 		ResultSet rSet = executeNonCreationQuery(countOfCard);
 		int cardCount = 0;
@@ -1040,8 +1039,8 @@ public class Database_Utils {
 	 * @return the string
 	 */
 	public String addCardToPlayersCollection(String playerID, String cardName) {
-		if (!StringUtils.isAlphanumeric(playerID)) return "INVALID PLAYERID";
-		if (!StringUtils.isAlphanumeric(cardName)) return "INVALID CARDNAME";
+		if (!isAlphanumeric(playerID)) return "INVALID PLAYERID";
+		if (!isAlphanumeric(cardName)) return "INVALID CARDNAME";
 		String query = "SELECT " + cardName + " FROM PLAYERSCARD WHERE playerid = '" + playerID + "'";
 		ResultSet rSet = executeNonCreationQuery(query);
 		try {
@@ -1298,7 +1297,15 @@ public class Database_Utils {
 		}
 		return map;
 	}
-	
+	public static boolean isAlphanumeric(String s) {
+		String alphanumeric = "AbcdEFGHIJKLmnOPQRSTUVWXYZaBCDefghijklMNopqrstuvwxyz0125436789";
+		for(int i = 0; i < s.length();i++) {
+			if(!alphanumeric.contains(String.valueOf(s.charAt(i)))) {
+				return false;
+			}
+		}
+		return true;
+	}
 	/**
 	 * Main method for testing new functions.
 	 *
